@@ -1,6 +1,6 @@
 LTspice 26.0.1 for Windows
 Circuit: C:\Users\mdeed\Documents\GitHub\synth-sim\models\tl072\test\tl072_ac.cir
-Start Time: Wed Nov 11 10:35:55 2026
+Start Time: Wed Nov 11 14:07:12 2026
 Options:TNOM=25 TEMP=25
 solver = Normal
 Maximum thread count: 24
@@ -9,7 +9,7 @@ temp = 25
 method = trap
 AsciiRawFile = true
 Direct Newton iteration succeeded in finding operating point.
-Total elapsed time: 0.213 seconds.
+Total elapsed time: 0.271 seconds.
 
 Files loaded:
 C:\Users\mdeed\Documents\GitHub\synth-sim\models\tl072\test\tl072_ac.cir

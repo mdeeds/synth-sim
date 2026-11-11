@@ -27,3 +27,9 @@ previews. Regenerate the schematic with
 `python scripts\generate_schematic.py`; KiCad CLI exports and ERC can then be
 run against the generated schematic. The schematic's net labels follow the
 LTspice circuit, including the bipolar LM393 supply connection.
+
+The IC symbols display the package pins in datasheet order, rotated
+counter-clockwise by 90 degrees: pin 1 is at the lower left, and for the
+TL072/LM393, VCC (pin 8) is at the upper left and VEE (pin 4) at the lower
+right. The `.cir` subcircuit calls follow each model's datasheet pin order;
+comments alongside each instance document the mapping.

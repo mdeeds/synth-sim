@@ -1,6 +1,6 @@
 LTspice 26.0.1 for Windows
 Circuit: C:\Users\mdeed\Documents\GitHub\synth-sim\circuits\oscilator\oscilator.cir
-Start Time: Wed Nov 11 11:38:54 2026
+Start Time: Wed Nov 11 14:07:12 2026
 Options:TNOM=25 TEMP=25 method=gear
 solver = Normal
 Maximum thread count: 24
@@ -9,7 +9,7 @@ temp = 25
 method = Gear
 AsciiRawFile = true
 Per .tran options, skipping operating point for transient analysis.
-Total elapsed time: 1.079 seconds.
+Total elapsed time: 1.494 seconds.
 
 Files loaded:
 C:\Users\mdeed\Documents\GitHub\synth-sim\circuits\oscilator\oscilator.cir

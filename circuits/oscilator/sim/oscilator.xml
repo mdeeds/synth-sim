@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\mdeed\Documents\GitHub\synth-sim\circuits\oscilator\oscilator.kicad_sch</source>
-    <date>2026-11-11T13:36:22</date>
+    <date>2026-11-11T14:06:15</date>
     <tool>Eeschema 10.0.0</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -35,7 +35,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0f3e40b4-2862-477f-b8c7-e51068e70f2f</tstamps>
+      <tstamps>3ffa3ab2-aeb7-40fd-a61d-08ba83e9924d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -56,7 +56,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>996daa23-0f70-4bac-b257-760f688f637f</tstamps>
+      <tstamps>32bcbef0-b746-4dc4-a3f0-56bf6c908bdc</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -77,7 +77,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f560523e-349c-44fe-b930-04002350b9c3</tstamps>
+      <tstamps>f7be3621-2e1a-47e4-9749-df9f88858bb2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -98,7 +98,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>44928b83-b3dd-4b40-a833-89c9294d6df4</tstamps>
+      <tstamps>28389c92-81eb-48ca-a929-89669ad49e98</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -119,7 +119,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7e74a64c-6314-4a61-8c40-31ad0b3d3546</tstamps>
+      <tstamps>33e3b0d2-e6d7-4842-846b-90104efc37de</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -140,7 +140,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7820e2bc-3b66-4509-b646-016f3a6a8ee0</tstamps>
+      <tstamps>25160efd-2b52-4f86-a645-9b2a269fa885</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -161,7 +161,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0e2afc5b-c880-4915-9dae-d41dcc48c7e7</tstamps>
+      <tstamps>39e9a17c-8282-4c08-a2b1-dad5dab6faff</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -182,7 +182,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ac9be202-892c-4ee1-8892-617af91db32d</tstamps>
+      <tstamps>d228d3a8-e680-46ec-8898-bc53044500a6</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -203,7 +203,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3d92a191-fc23-4a7a-b534-5024f0c24aa9</tstamps>
+      <tstamps>4006eb5b-3cbb-466b-a3ba-96a2d949e5c7</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -224,7 +224,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>a7807a2b-23c9-4824-851a-afdb00fd20a5</tstamps>
+      <tstamps>68cae915-5d80-4e68-b9ae-ab0d36c8615f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -245,7 +245,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>5674bc27-0677-47d1-b840-4c91b180d2b4</tstamps>
+      <tstamps>78d084a9-3bf8-4b8a-ad5b-cbc67b9fa411</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -266,7 +266,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>015cd3b4-2042-4d38-b1a3-fb19208af243</tstamps>
+      <tstamps>e55b8b3f-a5a6-4c34-9624-3984d8660883</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -287,7 +287,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0c669d62-d3ff-44e1-86d2-d55e48f3ff89</tstamps>
+      <tstamps>dc44784a-b9b9-41e8-ae7f-73ad706e7fb1</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -308,26 +308,26 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8412b1ba-f377-43a8-ba26-13756b1f52c6</tstamps>
+      <tstamps>e8f4aced-9a07-4c2c-9f05-49701edba082</tstamps>
       <units>
         <unit name="A">
           <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-            <pin num="3"/>
-            <pin num="7"/>
-            <pin num="8"/>
-            <pin num="10"/>
-            <pin num="11"/>
-            <pin num="15"/>
-            <pin num="4"/>
-            <pin num="5"/>
-            <pin num="6"/>
-            <pin num="9"/>
-            <pin num="12"/>
-            <pin num="13"/>
-            <pin num="14"/>
             <pin num="16"/>
+            <pin num="1"/>
+            <pin num="15"/>
+            <pin num="2"/>
+            <pin num="14"/>
+            <pin num="3"/>
+            <pin num="13"/>
+            <pin num="4"/>
+            <pin num="12"/>
+            <pin num="5"/>
+            <pin num="11"/>
+            <pin num="6"/>
+            <pin num="10"/>
+            <pin num="7"/>
+            <pin num="9"/>
+            <pin num="8"/>
           </pins>
         </unit>
       </units>
@@ -343,18 +343,18 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7c2c7a89-b03e-4b1b-a2cd-5b77572e0511</tstamps>
+      <tstamps>fbf2eebb-82eb-44a8-9672-9bec661d0d8c</tstamps>
       <units>
         <unit name="A">
           <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-            <pin num="3"/>
-            <pin num="4"/>
-            <pin num="5"/>
-            <pin num="6"/>
-            <pin num="7"/>
             <pin num="8"/>
+            <pin num="1"/>
+            <pin num="7"/>
+            <pin num="2"/>
+            <pin num="6"/>
+            <pin num="3"/>
+            <pin num="5"/>
+            <pin num="4"/>
           </pins>
         </unit>
       </units>
@@ -370,18 +370,18 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c1bc492a-1c9d-4f78-b388-a58fd42e61fe</tstamps>
+      <tstamps>490be455-00ce-4a61-8091-b0ecd47c36c1</tstamps>
       <units>
         <unit name="A">
           <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-            <pin num="3"/>
-            <pin num="4"/>
-            <pin num="5"/>
-            <pin num="6"/>
-            <pin num="7"/>
             <pin num="8"/>
+            <pin num="1"/>
+            <pin num="7"/>
+            <pin num="2"/>
+            <pin num="6"/>
+            <pin num="3"/>
+            <pin num="5"/>
+            <pin num="4"/>
           </pins>
         </unit>
       </units>
@@ -397,7 +397,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f59c559b-9c97-457f-bcf6-297fd05e0108</tstamps>
+      <tstamps>c19103f1-2c25-4018-8671-18dfe721a822</tstamps>
       <units>
         <unit name="A">
           <pins>

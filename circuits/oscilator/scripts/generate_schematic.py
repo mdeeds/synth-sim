@@ -58,17 +58,47 @@ def rectangle_body(width, height, text):
     )
 
 
-def make_chip_pins(entries, x, spacing=5.08, start=17.78):
-    result = []
-    side_indices = {"left": 0, "right": 0}
-    for number, name, side, electrical in entries:
-        y = start - side_indices[side] * spacing
-        side_indices[side] += 1
-        if side == "left":
-            result.append((number, name, -x, y, 0, electrical))
-        else:
-            result.append((number, name, x, y, 180, electrical))
-    return result
+def make_rotated_dip_pins(entries, pin_count):
+    names = {number: (name, electrical) for number, name, electrical in entries}
+    if pin_count == 8:
+        positions = {
+            1: (-7.62, -10.16, 90),
+            2: (-2.54, -10.16, 90),
+            3: (2.54, -10.16, 90),
+            4: (7.62, -10.16, 90),
+            5: (7.62, 10.16, 270),
+            6: (2.54, 10.16, 270),
+            7: (-2.54, 10.16, 270),
+            8: (-7.62, 10.16, 270),
+        }
+    elif pin_count == 16:
+        positions = {
+            **{
+                number: (-17.78 + (number - 1) * 5.08, -15.24, 90)
+                for number in range(1, 9)
+            },
+            **{
+                number: (17.78 - (number - 9) * 5.08, 15.24, 270)
+                for number in range(9, 17)
+            },
+        }
+    else:
+        raise ValueError(f"Unsupported DIP pin count: {pin_count}")
+    return [
+        (number, names[number][0], *positions[number], names[number][1])
+        for number in range(1, pin_count + 1)
+    ]
+
+
+def rotated_dip_pin_positions(pin_count):
+    pins = make_rotated_dip_pins(
+        [(number, str(number), "passive") for number in range(1, pin_count + 1)],
+        pin_count,
+    )
+    return {
+        number: (x, y, "top" if y > 0 else "bottom")
+        for number, _, x, y, _, _ in pins
+    }
 
 
 def resistor_symbol():
@@ -119,42 +149,42 @@ def dc_source_symbol():
 
 def custom_library():
     vca_pins = [
-        (1, "MODE", "left", "input"),
-        (2, "IIN1", "left", "input"),
-        (3, "VC1", "left", "input"),
-        (7, "IIN2", "left", "input"),
-        (8, "GND", "left", "power_in"),
-        (10, "IIN3", "left", "input"),
-        (11, "VC3", "left", "input"),
-        (15, "IIN4", "left", "input"),
-        (4, "IOUT1", "right", "output"),
-        (5, "IOUT2", "right", "output"),
-        (6, "VC2", "right", "input"),
-        (9, "VEE", "right", "power_in"),
-        (12, "IOUT3", "right", "output"),
-        (13, "IOUT4", "right", "output"),
-        (14, "VC4", "right", "input"),
-        (16, "VCC", "right", "power_in"),
+        (1, "MODE", "input"),
+        (2, "IIN1", "input"),
+        (3, "VC1", "input"),
+        (4, "IOUT1", "output"),
+        (5, "IOUT2", "output"),
+        (6, "VC2", "input"),
+        (7, "IIN2", "input"),
+        (8, "GND", "power_in"),
+        (9, "VEE", "power_in"),
+        (10, "IIN3", "input"),
+        (11, "VC3", "input"),
+        (12, "IOUT3", "output"),
+        (13, "IOUT4", "output"),
+        (14, "VC4", "input"),
+        (15, "IIN4", "input"),
+        (16, "VCC", "power_in"),
     ]
     tl072_pins = [
-        (1, "OUT1", "left", "output"),
-        (2, "IN1-", "left", "input"),
-        (3, "IN1+", "left", "input"),
-        (4, "VCC-", "left", "power_in"),
-        (5, "IN2+", "right", "input"),
-        (6, "IN2-", "right", "input"),
-        (7, "OUT2", "right", "output"),
-        (8, "VCC+", "right", "power_in"),
+        (1, "OUT1", "output"),
+        (2, "IN1-", "input"),
+        (3, "IN1+", "input"),
+        (4, "VCC-", "power_in"),
+        (5, "IN2+", "input"),
+        (6, "IN2-", "input"),
+        (7, "OUT2", "output"),
+        (8, "VCC+", "power_in"),
     ]
     lm393_pins = [
-        (1, "OUT1", "left", "open_collector"),
-        (2, "IN1-", "left", "input"),
-        (3, "IN1+", "left", "input"),
-        (4, "GND", "left", "power_in"),
-        (5, "IN2+", "right", "input"),
-        (6, "IN2-", "right", "input"),
-        (7, "OUT2", "right", "open_collector"),
-        (8, "VCC", "right", "power_in"),
+        (1, "OUT1", "open_collector"),
+        (2, "IN1-", "input"),
+        (3, "IN1+", "input"),
+        (4, "GND", "power_in"),
+        (5, "IN2+", "input"),
+        (6, "IN2-", "input"),
+        (7, "OUT2", "open_collector"),
+        (8, "VCC", "power_in"),
     ]
     symbols = [
         resistor_symbol(),
@@ -164,22 +194,22 @@ def custom_library():
             "SSM2164",
             "U",
             "SSM2164 quad voltage-controlled current amplifier, DIP-16 pin order",
-            rectangle_body(30.48, 45.72, ""),
-            make_chip_pins(vca_pins, 20.32, 5.08, 17.78),
+            rectangle_body(45.72, 20.32, ""),
+            make_rotated_dip_pins(vca_pins, 16),
         ),
         embedded_symbol(
             "TL072",
             "U",
             "TL072 dual operational amplifier, DIP-8 pin order",
-            rectangle_body(30.48, 25.4, ""),
-            make_chip_pins(tl072_pins, 20.32, 5.08, 7.62),
+            rectangle_body(30.48, 10.16, ""),
+            make_rotated_dip_pins(tl072_pins, 8),
         ),
         embedded_symbol(
             "LM393",
             "U",
             "LM393 dual comparator, DIP-8 pin order; output open collector",
-            rectangle_body(30.48, 25.4, ""),
-            make_chip_pins(lm393_pins, 20.32, 5.08, 7.62),
+            rectangle_body(30.48, 10.16, ""),
+            make_rotated_dip_pins(lm393_pins, 8),
         ),
     ]
     return "\n".join(symbols)
@@ -316,44 +346,9 @@ class Schematic:
 def build():
     schematic = Schematic()
 
-    vca_pin_positions = {
-        1: (-20.32, 17.78, "left"),
-        2: (-20.32, 12.70, "left"),
-        3: (-20.32, 7.62, "left"),
-        7: (-20.32, 2.54, "left"),
-        8: (-20.32, -2.54, "left"),
-        10: (-20.32, -7.62, "left"),
-        11: (-20.32, -12.70, "left"),
-        15: (-20.32, -17.78, "left"),
-        4: (20.32, 17.78, "right"),
-        5: (20.32, 12.70, "right"),
-        6: (20.32, 7.62, "right"),
-        9: (20.32, 2.54, "right"),
-        12: (20.32, -2.54, "right"),
-        13: (20.32, -7.62, "right"),
-        14: (20.32, -12.70, "right"),
-        16: (20.32, -17.78, "right"),
-    }
-    lm_pin_positions = {
-        1: (-20.32, 7.62, "left"),
-        2: (-20.32, 2.54, "left"),
-        3: (-20.32, -2.54, "left"),
-        4: (-20.32, -7.62, "left"),
-        5: (20.32, 7.62, "right"),
-        6: (20.32, 2.54, "right"),
-        7: (20.32, -2.54, "right"),
-        8: (20.32, -7.62, "right"),
-    }
-    tl_pin_positions = {
-        1: (-20.32, 7.62, "left"),
-        2: (-20.32, 2.54, "left"),
-        3: (-20.32, -2.54, "left"),
-        4: (-20.32, -7.62, "left"),
-        5: (20.32, 7.62, "right"),
-        6: (20.32, 2.54, "right"),
-        7: (20.32, -2.54, "right"),
-        8: (20.32, -7.62, "right"),
-    }
+    vca_pin_positions = rotated_dip_pin_positions(16)
+    lm_pin_positions = rotated_dip_pin_positions(8)
+    tl_pin_positions = rotated_dip_pin_positions(8)
 
     schematic.note("DUAL-SUPPLY OSCILLATOR - LTspice macromodel-based schematic", 12.7, 12.7, 1.8)
     schematic.note("Power: VCC = +15 V, GND = 0 V, VEE = -15 V. CV1 = 0.774 V.", 12.7, 19.05)
@@ -376,7 +371,7 @@ def build():
         {1: "HYST", 2: "CAP", 3: "VTH", 4: "VEE",
          5: "GND", 6: "HYST", 7: "SQ", 8: "VCC"},
         lm_pin_positions,
-        {"Reference": (0, -18), "Value": (0, 18)},
+        {"Reference": (-7.62, -1.27), "Value": (7.62, -1.27)},
     )
     schematic.note("A: CAP vs VTH Schmitt trigger; B: HYST inverter", 38.1, 91.44, 1.25)
 
@@ -388,7 +383,7 @@ def build():
          4: "SUM", 5: "GND", 6: "GND", 9: "VEE", 12: "GND",
          13: "GND", 14: "GND", 16: "VCC"},
         vca_pin_positions,
-        {"Reference": (0, -29), "Value": (0, 29)},
+        {"Reference": (-10.16, -1.27), "Value": (10.16, -1.27)},
     )
     schematic.note("Unused channels tied to GND as in LTspice test circuit.", 38.1, 187.96, 1.25)
 
@@ -398,7 +393,7 @@ def build():
         {1: "CAP", 2: "SUM", 3: "GND", 4: "VEE",
          5: "GND", 6: "GND", 7: None, 8: "VCC"},
         tl_pin_positions,
-        {"Reference": (0, -18), "Value": (0, 18)},
+        {"Reference": (-7.62, -1.27), "Value": (7.62, -1.27)},
     )
 
 
