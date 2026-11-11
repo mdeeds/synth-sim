@@ -19,7 +19,7 @@ def font(size=1.27):
     return f"(effects (font (size {size} {size})))"
 
 
-def embedded_symbol(name, reference, description, body, pins):
+def embedded_symbol(name, reference, description, body, pins, pin_electrical=False):
     lib_id = f"Oscillator:{name}"
     properties = [
         f'(property "Reference" {quote(reference)} (at 0 0 0) {font()} (hide yes))',
@@ -30,8 +30,9 @@ def embedded_symbol(name, reference, description, body, pins):
     ]
     pin_defs = []
     for number, name_, x, y, angle, electrical in pins:
+        pin_type = electrical if pin_electrical else "passive"
         pin_defs.append(
-            f'(pin passive line (at {x} {y} {angle}) (length 5.08) '
+            f'(pin {pin_type} line (at {x} {y} {angle}) (length 5.08) '
             f'(name {quote(name_)} {font()}) (number {quote(str(number))} {font()}))'
         )
     return "\n".join(
@@ -62,14 +63,14 @@ def make_rotated_dip_pins(entries, pin_count):
     names = {number: (name, electrical) for number, name, electrical in entries}
     if pin_count == 8:
         positions = {
-            1: (-7.62, -10.16, 90),
-            2: (-2.54, -10.16, 90),
-            3: (2.54, -10.16, 90),
-            4: (7.62, -10.16, 90),
-            5: (7.62, 10.16, 270),
-            6: (2.54, 10.16, 270),
-            7: (-2.54, 10.16, 270),
-            8: (-7.62, 10.16, 270),
+            1: (-7.62, -15.24, 90),
+            2: (-2.54, -15.24, 90),
+            3: (2.54, -15.24, 90),
+            4: (7.62, -15.24, 90),
+            5: (7.62, 15.24, 270),
+            6: (2.54, 15.24, 270),
+            7: (-2.54, 15.24, 270),
+            8: (-7.62, 15.24, 270),
         }
     elif pin_count == 16:
         positions = {
@@ -131,7 +132,7 @@ def capacitor_symbol():
     )
 
 
-def dc_source_symbol():
+def dc_source_symbol(name="VDC", power_out_pin=None):
     body = (
         '(circle (center 0 0) (radius 5.08) '
         '(stroke (width 0.508) (type default)) (fill (type none))) '
@@ -139,11 +140,59 @@ def dc_source_symbol():
         f'(text {quote("-")} (at 0 -1.905 0) {font(2.0)})'
     )
     return embedded_symbol(
-        "VDC",
+        name,
         "V",
         "DC voltage source",
         body,
-        [(1, "+", 0, 10.16, 270, "passive"), (2, "-", 0, -10.16, 90, "passive")],
+        [
+            (1, "+", 0, 10.16, 270, "power_out" if power_out_pin == 1 else "passive"),
+            (2, "-", 0, -10.16, 90, "power_out" if power_out_pin == 2 else "passive"),
+        ],
+        pin_electrical=power_out_pin is not None,
+    )
+
+
+def power_symbol(name, library_name=None, pin_type="power_in"):
+    library_name = library_name or name
+    if name == "+15V":
+        body = (
+            '(polyline (pts (xy -0.762 1.27) (xy 0 2.54)) '
+            '(stroke (width 0) (type default)) (fill (type none))) '
+            '(polyline (pts (xy 0 2.54) (xy 0.762 1.27)) '
+            '(stroke (width 0) (type default)) (fill (type none))) '
+            '(polyline (pts (xy 0 0) (xy 0 2.54)) '
+            '(stroke (width 0) (type default)) (fill (type none)))'
+        )
+    elif name == "-15V":
+        body = (
+            '(polyline (pts (xy 0 0) (xy 0 1.27) (xy 0.762 1.27) '
+            '(xy 0 2.54) (xy -0.762 1.27) (xy 0 1.27)) '
+            '(stroke (width 0) (type default)) (fill (type outline)))'
+        )
+    elif name == "GND":
+        body = (
+            '(polyline (pts (xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) '
+            '(xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)) '
+            '(stroke (width 0) (type default)) (fill (type none)))'
+        )
+    else:
+        raise ValueError(f"Unsupported power symbol: {name}")
+    return (
+        f'(symbol {quote("Oscillator:" + library_name)} (power global) '
+        '(pin_numbers (hide yes)) (pin_names (offset 0) (hide yes)) '
+        '(exclude_from_sim no) (in_bom yes) (on_board yes) '
+        f'(property "Reference" "#PWR" (at 0 -6.35 0) {font()} (hide yes)) '
+        f'(property "Value" {quote(name)} (at 0 -3.81 0) {font()}) '
+        f'(property "Footprint" "" (at 0 0 0) {font()} (hide yes)) '
+        f'(property "Datasheet" "" (at 0 0 0) {font()} (hide yes)) '
+        f'(property "Description" {quote("Global power symbol for " + name)} '
+        f'(at 0 0 0) {font()} (hide yes)) '
+        f'(symbol {quote(library_name + "_0_1")} {body}) '
+        f'(symbol {quote(library_name + "_1_1")} '
+        f'(pin {pin_type} line (at 0 0 {"270" if name == "GND" else "90"}) (length 0) '
+        '(name "" (effects (font (size 1.27 1.27)))) '
+        '(number "1" (effects (font (size 1.27 1.27))))))'
+        ')'
     )
 
 
@@ -190,6 +239,12 @@ def custom_library():
         resistor_symbol(),
         capacitor_symbol(),
         dc_source_symbol(),
+        dc_source_symbol("VDC_POS", 1),
+        dc_source_symbol("VDC_NEG", 2),
+        dc_source_symbol("VDC_CV", 2),
+        power_symbol("GND"),
+        power_symbol("+15V"),
+        power_symbol("-15V"),
         embedded_symbol(
             "SSM2164",
             "U",
@@ -201,14 +256,14 @@ def custom_library():
             "TL072",
             "U",
             "TL072 dual operational amplifier, DIP-8 pin order",
-            rectangle_body(30.48, 10.16, ""),
+            rectangle_body(20.32, 20.32, ""),
             make_rotated_dip_pins(tl072_pins, 8),
         ),
         embedded_symbol(
             "LM393",
             "U",
             "LM393 dual comparator, DIP-8 pin order; output open collector",
-            rectangle_body(30.48, 10.16, ""),
+            rectangle_body(20.32, 20.32, ""),
             make_rotated_dip_pins(lm393_pins, 8),
         ),
     ]
@@ -235,6 +290,7 @@ class Schematic:
     def __init__(self):
         self.root_uuid = uid()
         self.objects = []
+        self.power_index = 0
 
     def wire(self, x1, y1, x2, y2):
         self.objects.append(
@@ -247,6 +303,40 @@ class Schematic:
             f'(label {quote(net)} (at {x:.4f} {y:.4f} 0) '
             f'(effects (font (size 1.27 1.27)) (justify {justification} bottom)) '
             f'(uuid {quote(uid())}))'
+        )
+
+    def power(self, name, x, y, angle=0):
+        self.power_index += 1
+        ref = f"#PWR{self.power_index:02d}"
+        symbol_uuid = uid()
+        self.objects.append(
+            "\n".join(
+                [
+                    "(symbol",
+                    f'(lib_id {quote("Oscillator:" + name)})',
+                    f"(at {x:.4f} {y:.4f} {angle})",
+                    "(unit 1)",
+                    "(exclude_from_sim no)",
+                    "(in_bom no)",
+                    "(on_board no)",
+                    "(dnp no)",
+                    f"(uuid {quote(symbol_uuid)})",
+                    f'(property "Reference" {quote(ref)} '
+                    f'(at {x:.4f} {y - 3.81:.4f} 0) '
+                    f'{font()} (hide yes))',
+                    f'(property "Value" {quote(name)} '
+                    f'(at {x:.4f} {y - 3.81:.4f} 0) {font()})',
+                    f'(property "Footprint" "" (at {x:.4f} {y:.4f} 0) '
+                    f'{font()} (hide yes))',
+                    f'(property "Datasheet" "" (at {x:.4f} {y:.4f} 0) '
+                    f'{font()} (hide yes))',
+                    f'(pin "1" (uuid {quote(uid())}))',
+                    f'(instances (project {quote(PROJECT)} (path '
+                    f'{quote("/" + self.root_uuid)} (reference {quote(ref)}) '
+                    "(unit 1))))",
+                    ")",
+                ]
+            )
         )
 
     def note(self, text, x, y, size=1.5):
@@ -297,12 +387,32 @@ class Schematic:
                 continue
             if side in ("left", "right"):
                 wire_end_x = sx + (6.35 if side == "right" else -6.35)
-                self.wire(sx, sy, wire_end_x, sy)
-                self.label(net, wire_end_x, sy, "left" if side == "right" else "right")
+                if net in ("GND", "+15V", "-15V"):
+                    self.wire(sx, sy, wire_end_x, sy)
+                    angle = 180 if net == "-15V" else 0
+                    self.power(
+                        net,
+                        wire_end_x,
+                        sy,
+                        angle,
+                    )
+                else:
+                    self.wire(sx, sy, wire_end_x, sy)
+                    self.label(net, wire_end_x, sy, "left" if side == "right" else "right")
             else:
                 wire_end_y = sy + (6.35 if side == "bottom" else -6.35)
-                self.wire(sx, sy, sx, wire_end_y)
-                self.label(net, sx, wire_end_y)
+                if net in ("GND", "+15V", "-15V"):
+                    self.wire(sx, sy, sx, wire_end_y)
+                    angle = 180 if net == "-15V" else 0
+                    self.power(
+                        net,
+                        sx,
+                        wire_end_y,
+                        angle,
+                    )
+                else:
+                    self.wire(sx, sy, sx, wire_end_y)
+                    self.label(net, sx, wire_end_y)
         lines.extend(
             [
                 f'(instances (project {quote(PROJECT)} (path {quote("/" + self.root_uuid)} '
@@ -351,13 +461,13 @@ def build():
     tl_pin_positions = rotated_dip_pin_positions(8)
 
     schematic.note("DUAL-SUPPLY OSCILLATOR - LTspice macromodel-based schematic", 12.7, 12.7, 1.8)
-    schematic.note("Power: VCC = +15 V, GND = 0 V, VEE = -15 V. CV1 = 0.774 V.", 12.7, 19.05)
+    schematic.note("Power rails: +15 V, GND = 0 V, -15 V. CV1 = 0.774 V.", 12.7, 19.05)
     schematic.note("LM393 Schmitt thresholds about +/-7.5 V; second comparator inverts HYST to SQ.", 12.7, 25.4)
     schematic.note("R_TRIM = 20k total; wiper is 30% from the SQ end.", 12.7, 31.75, 1.25)
     schematic.note("Input chain: 33k, 30k, 500 ohm and 560 pF; CAP feeds back to the Schmitt trigger.", 12.7, 38.1, 1.25)
 
     schematic.instance(
-        "VDC", "V1", "0.774 VDC",
+        "VDC_CV", "V1", "0.774 VDC",
         208.28, 142.24,
         {1: "CV", 2: "GND"},
         {1: (0, 10.16, "top"), 2: (0, -10.16, "bottom")},
@@ -366,12 +476,27 @@ def build():
     schematic.note("CV reference", 219.71, 142.24, 1.25)
 
     schematic.instance(
+        "VDC_POS", "V2", "15 VDC",
+        190.5, 76.2,
+        {1: "+15V", 2: "GND"},
+        {1: (0, 10.16, "top"), 2: (0, -10.16, "bottom")},
+        {"Reference": (7.62, -1.27), "Value": (7.62, 1.27)},
+    )
+    schematic.instance(
+        "VDC_NEG", "V3", "15 VDC",
+        215.9, 76.2,
+        {1: "GND", 2: "-15V"},
+        {1: (0, 10.16, "top"), 2: (0, -10.16, "bottom")},
+        {"Reference": (7.62, -1.27), "Value": (7.62, 1.27)},
+    )
+
+    schematic.instance(
         "LM393", "U3", "LM393",
         69.85, 63.5,
-        {1: "HYST", 2: "CAP", 3: "VTH", 4: "VEE",
-         5: "GND", 6: "HYST", 7: "SQ", 8: "VCC"},
+        {1: "HYST", 2: "CAP", 3: "VTH", 4: "-15V",
+         5: "GND", 6: "HYST", 7: "SQ", 8: "+15V"},
         lm_pin_positions,
-        {"Reference": (-7.62, -1.27), "Value": (7.62, -1.27)},
+        {"Reference": (0, -1.905), "Value": (0, 1.905)},
     )
     schematic.note("A: CAP vs VTH Schmitt trigger; B: HYST inverter", 38.1, 91.44, 1.25)
 
@@ -380,8 +505,8 @@ def build():
         69.85, 152.4,
         {1: "GND", 2: "NDRIVE", 3: "CV", 7: "GND", 8: "GND",
          10: "GND", 11: "GND", 15: "GND",
-         4: "SUM", 5: "GND", 6: "GND", 9: "VEE", 12: "GND",
-         13: "GND", 14: "GND", 16: "VCC"},
+         4: "SUM", 5: "GND", 6: "GND", 9: "-15V", 12: "GND",
+         13: "GND", 14: "GND", 16: "+15V"},
         vca_pin_positions,
         {"Reference": (-10.16, -1.27), "Value": (10.16, -1.27)},
     )
@@ -390,22 +515,22 @@ def build():
     schematic.instance(
         "TL072", "U2", "TL072",
         160.02, 152.4,
-        {1: "CAP", 2: "SUM", 3: "GND", 4: "VEE",
-         5: "GND", 6: "GND", 7: None, 8: "VCC"},
+        {1: "CAP", 2: "SUM", 3: "GND", 4: "-15V",
+         5: "GND", 6: "GND", 7: None, 8: "+15V"},
         tl_pin_positions,
-        {"Reference": (-7.62, -1.27), "Value": (7.62, -1.27)},
+        {"Reference": (0, -1.905), "Value": (0, 1.905)},
     )
 
 
     passives = [
-        ("R", "RPU1", "5.1k", "HYST", "VCC"),
+        ("R", "RPU1", "5.1k", "HYST", "+15V"),
         ("R", "RFB", "100k", "HYST", "VTH"),
         ("R", "RREF", "100k", "VTH", "GND"),
-        ("R", "RPU2", "5.1k", "SQ", "VCC"),
+        ("R", "RPU2", "5.1k", "SQ", "+15V"),
         ("C", "CHYST", "15p", "HYST", "GND"),
         ("C", "CSQ", "15p", "SQ", "GND"),
         ("R", "R_TRIM_HI", "6k", "SQ", "WIPER"),
-        ("R", "R_TRIM_LO", "14k", "WIPER", "VEE"),
+        ("R", "R_TRIM_LO", "14k", "WIPER", "-15V"),
         ("R", "R_SQ", "33k", "WIPER", "IN"),
         ("R", "RIN", "30k", "IN", "NDRIVE"),
         ("R", "RSHUNT", "500", "NDRIVE", "NCOMP"),

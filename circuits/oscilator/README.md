@@ -33,3 +33,9 @@ counter-clockwise by 90 degrees: pin 1 is at the lower left, and for the
 TL072/LM393, VCC (pin 8) is at the upper left and VEE (pin 4) at the lower
 right. The `.cir` subcircuit calls follow each model's datasheet pin order;
 comments alongside each instance document the mapping.
+
+The schematic includes independent 15 V sources for the +15 V and -15 V rails.
+IC and resistor supply connections use the matching global power symbols.
+Ground connections use downward-pointing GND symbols. The DIP symbols share
+the same body height, with width sized to the pin count; pin numbers are kept
+outside the body and pin names inside.

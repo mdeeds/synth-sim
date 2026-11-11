@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\mdeed\Documents\GitHub\synth-sim\circuits\oscilator\oscilator.kicad_sch</source>
-    <date>2026-11-11T14:06:15</date>
+    <date>2026-11-11T15:21:21</date>
     <tool>Eeschema 10.0.0</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -35,7 +35,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3ffa3ab2-aeb7-40fd-a61d-08ba83e9924d</tstamps>
+      <tstamps>90f3bd36-9a67-4fe1-90a4-b5a3332cc52d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -56,7 +56,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>32bcbef0-b746-4dc4-a3f0-56bf6c908bdc</tstamps>
+      <tstamps>7b6c1bf4-bbc4-480c-a545-51024ba7616f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -77,7 +77,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f7be3621-2e1a-47e4-9749-df9f88858bb2</tstamps>
+      <tstamps>8a9f3444-7561-41c3-b274-ca59a3ba8736</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -98,7 +98,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>28389c92-81eb-48ca-a929-89669ad49e98</tstamps>
+      <tstamps>43390c2b-3a48-46a4-9436-2c2b19fbf46e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -119,7 +119,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>33e3b0d2-e6d7-4842-846b-90104efc37de</tstamps>
+      <tstamps>1005c156-e528-4c1a-b74e-e7238d1794a6</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -140,7 +140,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>25160efd-2b52-4f86-a645-9b2a269fa885</tstamps>
+      <tstamps>ca42b6ec-22b2-4f45-a9b7-dab39bdc33b6</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -161,7 +161,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>39e9a17c-8282-4c08-a2b1-dad5dab6faff</tstamps>
+      <tstamps>fb6ba891-4451-43b0-b0d3-485c140e7ce9</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -182,7 +182,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d228d3a8-e680-46ec-8898-bc53044500a6</tstamps>
+      <tstamps>0b4d8218-0e13-459c-904a-4018b3b23fdf</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -203,7 +203,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>4006eb5b-3cbb-466b-a3ba-96a2d949e5c7</tstamps>
+      <tstamps>6f84a842-9d66-4e39-85cb-0b4a603831ae</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -224,7 +224,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>68cae915-5d80-4e68-b9ae-ab0d36c8615f</tstamps>
+      <tstamps>055ba6ca-34b9-4fb8-b039-cb4daf40db1f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -245,7 +245,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>78d084a9-3bf8-4b8a-ad5b-cbc67b9fa411</tstamps>
+      <tstamps>41d26070-1776-42ff-b4c3-60e6edfdd88f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -266,7 +266,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e55b8b3f-a5a6-4c34-9624-3984d8660883</tstamps>
+      <tstamps>cf520907-d30e-47ac-951e-f7b8892c8b2f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -287,7 +287,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>dc44784a-b9b9-41e8-ae7f-73ad706e7fb1</tstamps>
+      <tstamps>d007a826-d708-40c3-85de-b125ef4c0cc2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -308,7 +308,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e8f4aced-9a07-4c2c-9f05-49701edba082</tstamps>
+      <tstamps>150c92c3-64a7-4631-8417-a2c7c3294043</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -343,7 +343,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>fbf2eebb-82eb-44a8-9672-9bec661d0d8c</tstamps>
+      <tstamps>ef5d5a57-afa3-4905-8073-2a799cb026e2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -370,7 +370,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>490be455-00ce-4a61-8091-b0ecd47c36c1</tstamps>
+      <tstamps>d6969a44-e71d-489c-b365-4303551d0b6d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -393,11 +393,53 @@
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="Oscillator" part="VDC" description="DC voltage source"/>
+      <libsource lib="Oscillator" part="VDC_CV" description="DC voltage source"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="oscilator.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c19103f1-2c25-4018-8671-18dfe721a822</tstamps>
+      <tstamps>d2fd48c5-72d5-4b2a-a61f-7746d4f540d7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="V2">
+      <value>15 VDC</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Oscillator" part="VDC_POS" description="DC voltage source"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="oscilator.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>aa150188-5842-4a15-99d3-0acd4569e1ed</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="V3">
+      <value>15 VDC</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Oscillator" part="VDC_NEG" description="DC voltage source"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="oscilator.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f2c5411f-4cee-449e-b0d6-e38241967ec7</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -505,17 +547,45 @@
         <pin num="8" name="VCC+" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Oscillator" part="VDC">
+    <libpart lib="Oscillator" part="VDC_CV">
       <description>DC voltage source</description>
       <fields>
         <field name="Reference">V</field>
-        <field name="Value">VDC</field>
+        <field name="Value">VDC_CV</field>
         <field name="Footprint"/>
         <field name="Datasheet"/>
         <field name="Description">DC voltage source</field>
       </fields>
       <pins>
         <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Oscillator" part="VDC_NEG">
+      <description>DC voltage source</description>
+      <fields>
+        <field name="Reference">V</field>
+        <field name="Value">VDC_NEG</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">DC voltage source</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Oscillator" part="VDC_POS">
+      <description>DC voltage source</description>
+      <fields>
+        <field name="Reference">V</field>
+        <field name="Value">VDC_POS</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">DC voltage source</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="power_out"/>
         <pin num="2" name="-" type="passive"/>
       </pins>
     </libpart>
@@ -526,16 +596,72 @@
     </library>
   </libraries>
   <nets>
-    <net code="1" name="/CAP" class="Default">
+    <net code="1" name="+15V" class="Default">
+      <node ref="RPU1" pin="2" pintype="passive"/>
+      <node ref="RPU2" pin="2" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="VCC_16" pintype="passive"/>
+      <node ref="U2" pin="8" pinfunction="VCC+_8" pintype="passive"/>
+      <node ref="U3" pin="8" pinfunction="VCC_8" pintype="passive"/>
+      <node ref="V2" pin="1" pinfunction="+_1" pintype="power_out"/>
+    </net>
+    <net code="2" name="-15V" class="Default">
+      <node ref="R_TRIM_LO" pin="2" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="VEE_9" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="VCC-_4" pintype="passive"/>
+      <node ref="U3" pin="4" pinfunction="GND_4" pintype="passive"/>
+      <node ref="V3" pin="2" pinfunction="-_2" pintype="power_out"/>
+    </net>
+    <net code="3" name="/CAP" class="Default">
       <node ref="CFB" pin="2" pintype="passive"/>
       <node ref="U2" pin="1" pinfunction="OUT1_1" pintype="passive"/>
       <node ref="U3" pin="2" pinfunction="IN1-_2" pintype="passive"/>
     </net>
-    <net code="2" name="/CV" class="Default">
+    <net code="4" name="/CV" class="Default">
       <node ref="U1" pin="3" pinfunction="VC1_3" pintype="passive"/>
       <node ref="V1" pin="1" pinfunction="+_1" pintype="passive"/>
     </net>
-    <net code="3" name="/GND" class="Default">
+    <net code="5" name="/HYST" class="Default">
+      <node ref="CHYST" pin="1" pintype="passive"/>
+      <node ref="RFB" pin="1" pintype="passive"/>
+      <node ref="RPU1" pin="1" pintype="passive"/>
+      <node ref="U3" pin="1" pinfunction="OUT1_1" pintype="passive"/>
+      <node ref="U3" pin="6" pinfunction="IN2-_6" pintype="passive"/>
+    </net>
+    <net code="6" name="/IN" class="Default">
+      <node ref="RIN" pin="1" pintype="passive"/>
+      <node ref="R_SQ" pin="2" pintype="passive"/>
+    </net>
+    <net code="7" name="/NCOMP" class="Default">
+      <node ref="CCOMP" pin="1" pintype="passive"/>
+      <node ref="RSHUNT" pin="2" pintype="passive"/>
+    </net>
+    <net code="8" name="/NDRIVE" class="Default">
+      <node ref="RIN" pin="2" pintype="passive"/>
+      <node ref="RSHUNT" pin="1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="IIN1_2" pintype="passive"/>
+    </net>
+    <net code="9" name="/SQ" class="Default">
+      <node ref="CSQ" pin="1" pintype="passive"/>
+      <node ref="RPU2" pin="1" pintype="passive"/>
+      <node ref="R_TRIM_HI" pin="1" pintype="passive"/>
+      <node ref="U3" pin="7" pinfunction="OUT2_7" pintype="passive"/>
+    </net>
+    <net code="10" name="/SUM" class="Default">
+      <node ref="CFB" pin="1" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="IOUT1_4" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="IN1-_2" pintype="passive"/>
+    </net>
+    <net code="11" name="/VTH" class="Default">
+      <node ref="RFB" pin="2" pintype="passive"/>
+      <node ref="RREF" pin="1" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="IN1+_3" pintype="passive"/>
+    </net>
+    <net code="12" name="/WIPER" class="Default">
+      <node ref="R_SQ" pin="1" pintype="passive"/>
+      <node ref="R_TRIM_HI" pin="2" pintype="passive"/>
+      <node ref="R_TRIM_LO" pin="1" pintype="passive"/>
+    </net>
+    <net code="13" name="GND" class="Default">
       <node ref="CCOMP" pin="2" pintype="passive"/>
       <node ref="CHYST" pin="2" pintype="passive"/>
       <node ref="CSQ" pin="2" pintype="passive"/>
@@ -555,61 +681,9 @@
       <node ref="U2" pin="5" pinfunction="IN2+_5" pintype="passive"/>
       <node ref="U2" pin="6" pinfunction="IN2-_6" pintype="passive"/>
       <node ref="U3" pin="5" pinfunction="IN2+_5" pintype="passive"/>
-      <node ref="V1" pin="2" pinfunction="-_2" pintype="passive"/>
-    </net>
-    <net code="4" name="/HYST" class="Default">
-      <node ref="CHYST" pin="1" pintype="passive"/>
-      <node ref="RFB" pin="1" pintype="passive"/>
-      <node ref="RPU1" pin="1" pintype="passive"/>
-      <node ref="U3" pin="1" pinfunction="OUT1_1" pintype="passive"/>
-      <node ref="U3" pin="6" pinfunction="IN2-_6" pintype="passive"/>
-    </net>
-    <net code="5" name="/IN" class="Default">
-      <node ref="RIN" pin="1" pintype="passive"/>
-      <node ref="R_SQ" pin="2" pintype="passive"/>
-    </net>
-    <net code="6" name="/NCOMP" class="Default">
-      <node ref="CCOMP" pin="1" pintype="passive"/>
-      <node ref="RSHUNT" pin="2" pintype="passive"/>
-    </net>
-    <net code="7" name="/NDRIVE" class="Default">
-      <node ref="RIN" pin="2" pintype="passive"/>
-      <node ref="RSHUNT" pin="1" pintype="passive"/>
-      <node ref="U1" pin="2" pinfunction="IIN1_2" pintype="passive"/>
-    </net>
-    <net code="8" name="/SQ" class="Default">
-      <node ref="CSQ" pin="1" pintype="passive"/>
-      <node ref="RPU2" pin="1" pintype="passive"/>
-      <node ref="R_TRIM_HI" pin="1" pintype="passive"/>
-      <node ref="U3" pin="7" pinfunction="OUT2_7" pintype="passive"/>
-    </net>
-    <net code="9" name="/SUM" class="Default">
-      <node ref="CFB" pin="1" pintype="passive"/>
-      <node ref="U1" pin="4" pinfunction="IOUT1_4" pintype="passive"/>
-      <node ref="U2" pin="2" pinfunction="IN1-_2" pintype="passive"/>
-    </net>
-    <net code="10" name="/VCC" class="Default">
-      <node ref="RPU1" pin="2" pintype="passive"/>
-      <node ref="RPU2" pin="2" pintype="passive"/>
-      <node ref="U1" pin="16" pinfunction="VCC_16" pintype="passive"/>
-      <node ref="U2" pin="8" pinfunction="VCC+_8" pintype="passive"/>
-      <node ref="U3" pin="8" pinfunction="VCC_8" pintype="passive"/>
-    </net>
-    <net code="11" name="/VEE" class="Default">
-      <node ref="R_TRIM_LO" pin="2" pintype="passive"/>
-      <node ref="U1" pin="9" pinfunction="VEE_9" pintype="passive"/>
-      <node ref="U2" pin="4" pinfunction="VCC-_4" pintype="passive"/>
-      <node ref="U3" pin="4" pinfunction="GND_4" pintype="passive"/>
-    </net>
-    <net code="12" name="/VTH" class="Default">
-      <node ref="RFB" pin="2" pintype="passive"/>
-      <node ref="RREF" pin="1" pintype="passive"/>
-      <node ref="U3" pin="3" pinfunction="IN1+_3" pintype="passive"/>
-    </net>
-    <net code="13" name="/WIPER" class="Default">
-      <node ref="R_SQ" pin="1" pintype="passive"/>
-      <node ref="R_TRIM_HI" pin="2" pintype="passive"/>
-      <node ref="R_TRIM_LO" pin="1" pintype="passive"/>
+      <node ref="V1" pin="2" pinfunction="-_2" pintype="power_out"/>
+      <node ref="V2" pin="2" pinfunction="-_2" pintype="passive"/>
+      <node ref="V3" pin="1" pinfunction="+_1" pintype="passive"/>
     </net>
     <net code="14" name="unconnected-(U2-OUT2-Pad7)" class="Default">
       <node ref="U2" pin="7" pinfunction="OUT2_7" pintype="passive+no_connect"/>
