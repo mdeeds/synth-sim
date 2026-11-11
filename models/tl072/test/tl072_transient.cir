@@ -1,0 +1,11 @@
+* TL072 unity-gain follower large-signal slew test; supplies +/-15 V.
+.include ..\TL072.lib
+VCC VCC 0 15
+VEE VEE 0 -15
+VIN INP 0 PULSE(0 10 1u 1n 1n 2u 5u)
+RIN INP 0 1G
+RLOAD OUT 0 10k
+XU1 OUT OUT INP VEE 0 0 OUTB VCC TL072
+.tran 0 3u 0 2n
+.options TNOM=25 TEMP=25
+.end

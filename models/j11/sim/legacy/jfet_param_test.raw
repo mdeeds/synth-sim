@@ -1,0 +1,21 @@
+Title: C:\Users\mdeed\Documents\GitHub\synth-sim\test\jfet_param_test.net
+Date: Wed Nov 11 07:03:37 2026
+Plotname: Operating Point
+Flags: real
+No. Variables: 5
+No. Points:            1
+Offset:    0.0000000000000000e+00
+Command: Linear Technology Corporation LTspice
+Backannotation: x1 d g s
+Variables:
+	0	V(d)	voltage
+	1	I(Vd)	device_current
+	2	Ix(x1:d)	subckt_current
+	3	Ix(x1:g)	subckt_current
+	4	Ix(x1:s)	subckt_current
+Values:
+0		1.000000000000000e-01
+	-1.486079759321240e-03
+	1.486079759321236e-03
+	-1.108506763313014e-13
+	-1.486079759210385e-03

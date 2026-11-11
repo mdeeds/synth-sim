@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="black"/></marker></defs>
+<text x="500" y="35" text-anchor="middle" font-family="Arial" font-size="21" font-weight="bold">J111-D Figure 10: Effect of IDSS on RDS(on) and VGS(off)</text>
+<line x1="125.00" y1="70" x2="125.00" y2="585" stroke="#c8c8c8"/>
+<text x="125.00" y="609" text-anchor="middle" font-family="Arial" font-size="13">10</text>
+<line x1="179.29" y1="70" x2="179.29" y2="585" stroke="#c8c8c8"/>
+<text x="179.29" y="609" text-anchor="middle" font-family="Arial" font-size="13">20</text>
+<line x1="233.57" y1="70" x2="233.57" y2="585" stroke="#c8c8c8"/>
+<text x="233.57" y="609" text-anchor="middle" font-family="Arial" font-size="13">30</text>
+<line x1="287.86" y1="70" x2="287.86" y2="585" stroke="#c8c8c8"/>
+<text x="287.86" y="609" text-anchor="middle" font-family="Arial" font-size="13">40</text>
+<line x1="342.14" y1="70" x2="342.14" y2="585" stroke="#c8c8c8"/>
+<text x="342.14" y="609" text-anchor="middle" font-family="Arial" font-size="13">50</text>
+<line x1="396.43" y1="70" x2="396.43" y2="585" stroke="#c8c8c8"/>
+<text x="396.43" y="609" text-anchor="middle" font-family="Arial" font-size="13">60</text>
+<line x1="450.71" y1="70" x2="450.71" y2="585" stroke="#c8c8c8"/>
+<text x="450.71" y="609" text-anchor="middle" font-family="Arial" font-size="13">70</text>
+<line x1="505.00" y1="70" x2="505.00" y2="585" stroke="#c8c8c8"/>
+<text x="505.00" y="609" text-anchor="middle" font-family="Arial" font-size="13">80</text>
+<line x1="559.29" y1="70" x2="559.29" y2="585" stroke="#c8c8c8"/>
+<text x="559.29" y="609" text-anchor="middle" font-family="Arial" font-size="13">90</text>
+<line x1="613.57" y1="70" x2="613.57" y2="585" stroke="#c8c8c8"/>
+<text x="613.57" y="609" text-anchor="middle" font-family="Arial" font-size="13">100</text>
+<line x1="667.86" y1="70" x2="667.86" y2="585" stroke="#c8c8c8"/>
+<text x="667.86" y="609" text-anchor="middle" font-family="Arial" font-size="13">110</text>
+<line x1="722.14" y1="70" x2="722.14" y2="585" stroke="#c8c8c8"/>
+<text x="722.14" y="609" text-anchor="middle" font-family="Arial" font-size="13">120</text>
+<line x1="776.43" y1="70" x2="776.43" y2="585" stroke="#c8c8c8"/>
+<text x="776.43" y="609" text-anchor="middle" font-family="Arial" font-size="13">130</text>
+<line x1="830.71" y1="70" x2="830.71" y2="585" stroke="#c8c8c8"/>
+<text x="830.71" y="609" text-anchor="middle" font-family="Arial" font-size="13">140</text>
+<line x1="885.00" y1="70" x2="885.00" y2="585" stroke="#c8c8c8"/>
+<text x="885.00" y="609" text-anchor="middle" font-family="Arial" font-size="13">150</text>
+<line x1="125" y1="585.00" x2="885" y2="585.00" stroke="#c8c8c8"/>
+<text x="113" y="589.00" text-anchor="end" font-family="Arial" font-size="13">0</text>
+<text x="897" y="589.00" text-anchor="start" font-family="Arial" font-size="13">0.0</text>
+<line x1="125" y1="533.50" x2="885" y2="533.50" stroke="#c8c8c8"/>
+<text x="113" y="537.50" text-anchor="end" font-family="Arial" font-size="13">10</text>
+<text x="897" y="537.50" text-anchor="start" font-family="Arial" font-size="13">1.0</text>
+<line x1="125" y1="482.00" x2="885" y2="482.00" stroke="#c8c8c8"/>
+<text x="113" y="486.00" text-anchor="end" font-family="Arial" font-size="13">20</text>
+<text x="897" y="486.00" text-anchor="start" font-family="Arial" font-size="13">2.0</text>
+<line x1="125" y1="430.50" x2="885" y2="430.50" stroke="#c8c8c8"/>
+<text x="113" y="434.50" text-anchor="end" font-family="Arial" font-size="13">30</text>
+<text x="897" y="434.50" text-anchor="start" font-family="Arial" font-size="13">3.0</text>
+<line x1="125" y1="379.00" x2="885" y2="379.00" stroke="#c8c8c8"/>
+<text x="113" y="383.00" text-anchor="end" font-family="Arial" font-size="13">40</text>
+<text x="897" y="383.00" text-anchor="start" font-family="Arial" font-size="13">4.0</text>
+<line x1="125" y1="327.50" x2="885" y2="327.50" stroke="#c8c8c8"/>
+<text x="113" y="331.50" text-anchor="end" font-family="Arial" font-size="13">50</text>
+<text x="897" y="331.50" text-anchor="start" font-family="Arial" font-size="13">5.0</text>
+<line x1="125" y1="276.00" x2="885" y2="276.00" stroke="#c8c8c8"/>
+<text x="113" y="280.00" text-anchor="end" font-family="Arial" font-size="13">60</text>
+<text x="897" y="280.00" text-anchor="start" font-family="Arial" font-size="13">6.0</text>
+<line x1="125" y1="224.50" x2="885" y2="224.50" stroke="#c8c8c8"/>
+<text x="113" y="228.50" text-anchor="end" font-family="Arial" font-size="13">70</text>
+<text x="897" y="228.50" text-anchor="start" font-family="Arial" font-size="13">7.0</text>
+<line x1="125" y1="173.00" x2="885" y2="173.00" stroke="#c8c8c8"/>
+<text x="113" y="177.00" text-anchor="end" font-family="Arial" font-size="13">80</text>
+<text x="897" y="177.00" text-anchor="start" font-family="Arial" font-size="13">8.0</text>
+<line x1="125" y1="121.50" x2="885" y2="121.50" stroke="#c8c8c8"/>
+<text x="113" y="125.50" text-anchor="end" font-family="Arial" font-size="13">90</text>
+<text x="897" y="125.50" text-anchor="start" font-family="Arial" font-size="13">9.0</text>
+<line x1="125" y1="70.00" x2="885" y2="70.00" stroke="#c8c8c8"/>
+<text x="113" y="74.00" text-anchor="end" font-family="Arial" font-size="13">100</text>
+<text x="897" y="74.00" text-anchor="start" font-family="Arial" font-size="13">10.0</text>
+<line x1="125" y1="70" x2="125" y2="585" stroke="black" stroke-width="2"/>
+<line x1="885" y1="70" x2="885" y2="585" stroke="black" stroke-width="2"/>
+<line x1="125" y1="585" x2="885" y2="585" stroke="black" stroke-width="2"/>
+<path d="M125.71,287.24 C134.87,294.83 162.36,319.79 180.68,332.75 C198.99,345.72 217.31,355.89 235.61,365.03 C253.92,374.17 272.19,381.55 290.50,387.57 C308.80,393.59 327.14,397.38 345.44,401.14 C363.74,404.90 382.01,407.57 400.31,410.15 C418.60,412.72 436.91,415.26 455.22,416.60 C473.53,417.95 491.85,418.22 510.15,418.22 C528.44,418.21 546.67,417.06 564.98,416.58 C583.29,416.09 601.70,416.10 620.02,415.32 C638.34,414.55 656.56,414.37 674.90,411.91 C693.24,409.44 711.68,405.02 730.05,400.52 C748.42,396.03 775.93,387.52 785.11,384.92" fill="none" stroke="#202020" stroke-width="4"/>
+<path d="M125.71,528.93 C134.87,522.09 162.36,499.87 180.68,487.88 C198.99,475.90 217.31,466.46 235.61,457.04 C253.92,447.61 272.19,439.89 290.50,431.31 C308.80,422.74 327.14,414.17 345.44,405.60 C363.74,397.02 382.01,388.45 400.31,379.88 C418.60,371.30 436.91,363.59 455.22,354.16 C473.53,344.73 491.85,334.44 510.15,323.30 C528.44,312.16 546.67,299.30 564.98,287.30 C583.29,275.30 601.70,264.16 620.02,251.31 C638.34,238.46 656.56,227.33 674.90,210.20 C693.24,193.07 711.68,171.66 730.05,148.54 C748.42,125.41 775.93,84.29 785.11,71.44" fill="none" stroke="#202020" stroke-width="4"/>
+<text x="505.00" y="657" text-anchor="middle" font-family="Arial" font-size="17">IDSS, zero-gate-voltage drain current (mA)</text>
+<text x="32" y="327.50" transform="rotate(-90 32 327.50)" text-anchor="middle" font-family="Arial" font-size="16">rDS(on) at VGS = 0 (ohm)</text>
+<text x="975" y="327.50" transform="rotate(-90 975 327.50)" text-anchor="middle" font-family="Arial" font-size="16">VGS(off) (V)</text>
+<text x="235" y="110" font-family="Arial" font-size="16">rDS(on) at VGS = 0</text>
+<line x1="370" y1="116" x2="179" y2="297" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="690" y="370" font-family="Arial" font-size="16">VGS(off)</text>
+<line x1="760" y1="360" x2="559" y2="286" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="500" y="680" text-anchor="middle" font-family="Arial" font-size="13">Typical 25 C curves digitized approximately from the datasheet; values are approximate.</text>
+</svg>

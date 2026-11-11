@@ -1,0 +1,11 @@
+* TL072 unity-gain follower AC response; supplies +/-15 V, 10-kOhm load.
+.include ..\TL072.lib
+VCC VCC 0 15
+VEE VEE 0 -15
+VIN INP 0 AC 1
+RIN INP 0 1G
+RLOAD OUT 0 10k
+XU1 OUT OUT INP VEE 0 0 OUTB VCC TL072
+.ac dec 100 1 100Meg
+.options TNOM=25 TEMP=25
+.end

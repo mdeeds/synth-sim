@@ -1,0 +1,23 @@
+* SSM2164/AS2164 current-mode exponential VCA transfer test.
+* Four channels share a control voltage and use distinct positive input currents.
+.include SSM2164.lib
+
+VCC VCC 0 15
+VEE VEE 0 -15
+VCTRL CTRL 0 0
+IMODE 0 MODE 0
+IIN1SRC 0 IN1 10u
+IIN2SRC 0 IN2 20u
+IIN3SRC 0 IN3 50u
+IIN4SRC 0 IN4 100u
+VOUT1 OUT1 0 0
+VOUT2 OUT2 0 0
+VOUT3 OUT3 0 0
+VOUT4 OUT4 0 0
+
+XU1 MODE IN1 CTRL OUT1 OUT2 CTRL IN2 0 VEE IN3 CTRL OUT3 OUT4 CTRL IN4 VCC SSM2164
+
+.save V(CTRL) I(VOUT1) I(VOUT2) I(VOUT3) I(VOUT4)
+.dc VCTRL -3 3 0.025
+.options TNOM=25 TEMP=25
+.end

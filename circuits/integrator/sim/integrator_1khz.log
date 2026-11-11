@@ -1,0 +1,21 @@
+LTspice 26.0.1 for Windows
+Circuit: C:\Users\mdeed\Documents\GitHub\synth-sim\circuits\integrator\integrator_1khz.cir
+Start Time: Wed Nov 11 11:23:27 2026
+Options:TNOM=25 TEMP=25
+solver = Normal
+Maximum thread count: 24
+tnom = 25
+temp = 25
+method = trap
+AsciiRawFile = true
+Per .tran options, skipping operating point for transient analysis.
+Total elapsed time: 0.316 seconds.
+
+Files loaded:
+C:\Users\mdeed\Documents\GitHub\synth-sim\circuits\integrator\integrator_1khz.cir
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\2164\SSM2164.lib
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\tl072\TL072.lib
+
+out_min: MIN(V(OUT) )=-4.99540465398 FROM 0.001 TO 0.002
+out_max: MAX(V(OUT) )=5.00297984369 FROM 0.001 TO 0.002
+out_pp: OUT_MAX-OUT_MIN=9.99838449766

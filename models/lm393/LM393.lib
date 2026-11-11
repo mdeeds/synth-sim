@@ -1,0 +1,23 @@
+* LM393 dual voltage comparator, standard 8-pin DIP/SOIC pin order.
+* Pin order: 1 OUT1, 2 IN1-, 3 IN1+, 4 GND, 5 IN2+, 6 IN2-, 7 OUT2, 8 VCC.
+* Typical classic LM393 model at 5 V: 2 mV input offset, 25 nA input bias,
+* 0.8 mA total quiescent current, and approximately 1.3 us response.
+* Output is open collector; connect an external pull-up resistor.
+* Behavioral model does not model input clamps, output current limiting,
+* saturation recovery, temperature corners, or detailed propagation dynamics.
+.subckt LM393 OUT1 IN1M IN1P GND IN2P IN2M OUT2 VCC PARAMS: VOS=2m IB=25n TPD=1.3u IQ=0.8m
+XCOMP1 OUT1 IN1M IN1P GND VCC LM393_COMP PARAMS: VOS={VOS} IB={IB} TPD={TPD}
+XCOMP2 OUT2 IN2M IN2P GND VCC LM393_COMP PARAMS: VOS={VOS} IB={IB} TPD={TPD}
+BBIAS VCC GND I={IQ}
+.ends LM393
+
+.subckt LM393_COMP OUT INM INP GND VCC PARAMS: VOS=2m IB=25n TPD=1.3u
+BIBP GND INP I={IB}
+BIBM GND INM I={IB}
+BSTATE NRAW GND V={if(V(INP,INM)>VOS,0,V(VCC,GND))}
+RDELAY NRAW NCTRL {TPD/(ln(2)*1n)}
+CDELAY NCTRL GND 1n
+SOUT OUT GND NCTRL GND LM393_SW
+.ends LM393_COMP
+
+.model LM393_SW SW(Ron=50 Roff=1G Vt=2.5 Vh=0)

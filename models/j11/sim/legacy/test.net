@@ -1,0 +1,5 @@
+* Test circuit
+V1 1 0 10
+R1 1 0 1k
+.op
+.end

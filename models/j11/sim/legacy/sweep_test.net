@@ -1,0 +1,7 @@
+* Test curve
+J1 d g 0 NJF_TEST
+Vds d 0 0.1
+Vgs g 0 0
+.model NJF_TEST NJF(Vto=-5.58 Beta=3.619m Rd=1 Rs=1)
+.dc Vgs -5.5 0 0.05
+.end

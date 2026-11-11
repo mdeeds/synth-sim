@@ -1,0 +1,9 @@
+* Subckt param test
+.subckt my_res 1 2 PARAMS: RVAL=1k
+R1 1 2 {RVAL}
+.ends
+
+X1 in 0 my_res PARAMS: RVAL=500
+V1 in 0 5
+.op
+.end

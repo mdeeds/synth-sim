@@ -1,0 +1,19 @@
+Title: C:\Users\mdeed\Documents\GitHub\synth-sim\test\param_test.net
+Date: Wed Nov 11 07:03:28 2026
+Plotname: Operating Point
+Flags: real
+No. Variables: 4
+No. Points:            1
+Offset:    0.0000000000000000e+00
+Command: Linear Technology Corporation LTspice
+Backannotation: x1 1 2
+Variables:
+	0	V(in)	voltage
+	1	I(V1)	device_current
+	2	Ix(x1:1)	subckt_current
+	3	Ix(x1:2)	subckt_current
+Values:
+0		5.000000000000000e+00
+	-1.000000000000000e-02
+	1.000000000000000e-02
+	-1.000000000000000e-02

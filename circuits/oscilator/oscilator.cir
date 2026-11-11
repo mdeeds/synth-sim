@@ -1,0 +1,52 @@
+* Asymmetric SSM2164/TL072 integrator oscillator with LM393 Schmitt feedback.
+* LM393 negative supply/output low rail is VEE=-15 V; thresholds reference 0 V.
+.include ..\..\models\2164\SSM2164.lib
+.include ..\..\models\tl072\TL072.lib
+.include ..\..\models\lm393\LM393.lib
+
+.param TRIM=0.30
+VCC VCC 0 15
+VEE VEE 0 -15
+VCV CV 0 0.774
+VMODE MODE 0 0
+
+* SQ switches the trim-derived input between a strong negative drive and a
+* smaller positive drive. The 2164 input network matches circuits\integrator.
+R_TRIM_HI SQ WIPER {20k*TRIM}
+R_TRIM_LO WIPER VEE {20k*(1-TRIM)}
+R_SQ WIPER IN 33k
+RIN IN NDRIVE 30k
+RSHUNT NDRIVE NCOMP 500
+CCOMP NCOMP 0 560p
+VIMON NDRIVE IIN1 0
+
+* First comparator: Schmitt trigger with nominal +/-7.5 V thresholds.
+RPU1 HYST VCC 5.1k
+RFB HYST VTH 100k
+RREF VTH 0 100k
+CHYST HYST 0 15p
+
+* Second comparator inverts HYST to generate SQ.
+RPU2 SQ VCC 5.1k
+CSQ SQ 0 15p
+XU3 HYST CAP VTH VEE 0 HYST SQ VCC LM393
+
+* SSM2164 channel 1 and TL072 capacitive-feedback integrator.
+VVC2 VC2 0 0
+VIIN2 IIN2 0 0
+VVC3 VC3 0 0
+VIIN3 IIN3 0 0
+VVC4 VC4 0 0
+VIIN4 IIN4 0 0
+VIOUT2 IOUT2 0 0
+VIOUT3 IOUT3 0 0
+VIOUT4 IOUT4 0 0
+VOMON IOUT1 SUM 0
+XU1 MODE IIN1 CV IOUT1 IOUT2 VC2 IIN2 0 VEE IIN3 VC3 IOUT3 IOUT4 VC4 IIN4 VCC SSM2164
+CFB CAP SUM 560p IC=0
+XU2 CAP SUM 0 VEE 0 0 OPAMP2 VCC TL072
+
+.save V(CAP) V(SUM) V(IN) V(WIPER) V(CV) V(HYST) V(VTH) V(SQ) V(IOUT1) I(VIMON) I(VOMON)
+.tran 0 50m 0 1u uic
+.options TNOM=25 TEMP=25 method=gear
+.end

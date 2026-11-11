@@ -1,0 +1,28 @@
+* SSM2164 / AS2164 quad voltage-controlled amplifier
+* Pin order follows the 16-pin DIP/SOIC datasheet numbering:
+* 1 MODE, 2 IIN1, 3 VC1, 4 IOUT1, 5 IOUT2, 6 VC2, 7 IIN2, 8 GND,
+* 9 VEE, 10 IIN3, 11 VC3, 12 IOUT3, 13 IOUT4, 14 VC4, 15 IIN4, 16 VCC.
+* Positive input current entering IIN produces positive output current sourced
+* from IOUT. Gain is unity at VC=0 and follows the typical -33 mV/dB law.
+* Idealized behavioral model: bandwidth, distortion, and noise are not modeled.
+* Output compliance is approximated by antiparallel diode clamps to ground.
+* MODE is present for pin compatibility.
+.subckt SSM2164 MODE IIN1 VC1 IOUT1 IOUT2 VC2 IIN2 GND VEE IIN3 VC3 IOUT3 IOUT4 VC4 IIN4 VCC PARAMS: RVC=5k
+XCH1 IIN1 VC1 IOUT1 GND SSM2164_CH PARAMS: RVC={RVC}
+XCH2 IIN2 VC2 IOUT2 GND SSM2164_CH PARAMS: RVC={RVC}
+XCH3 IIN3 VC3 IOUT3 GND SSM2164_CH PARAMS: RVC={RVC}
+XCH4 IIN4 VC4 IOUT4 GND SSM2164_CH PARAMS: RVC={RVC}
+RMODE MODE VEE 1G
+BBIAS VCC VEE I=6m
+.ends SSM2164
+
+.subckt SSM2164_CH IIN VC IOUT GND PARAMS: RVC=5k
+VSENSE IIN IN 0
+RIN IN GND 1
+RCONTROL VC GND {RVC}
+BOUT GND IOUT I={I(VSENSE)*min(max(exp(-V(VC,GND)/(33m*20/ln(10))),1e-5),10)}
+DCOMPH IOUT GND SSM2164_COMP
+DCOMPL GND IOUT SSM2164_COMP
+.ends SSM2164_CH
+
+.model SSM2164_COMP D(IS=1n N=1 RS=0.1)

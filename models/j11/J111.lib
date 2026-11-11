@@ -1,0 +1,7 @@
+* ON Semiconductor J111 N-channel depletion JFET
+* Pins: D G S. The TO-92 package pin order is Drain, Source, Gate.
+* Typical room-temperature model; datasheet limits are not guaranteed corners.
+.subckt J111 D G S PARAMS: VTO=-3.5 BETA=4.9m RD=0.1 RS=0.1 CGS=10p CGD=8p LAMBDA=1m
+JCORE D G S J111_CORE
+.model J111_CORE NJF(VTO={VTO} BETA={BETA} RD={RD} RS={RS} CGS={CGS} CGD={CGD} LAMBDA={LAMBDA})
+.ends J111

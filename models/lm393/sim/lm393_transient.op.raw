@@ -1,0 +1,47 @@
+Title: C:\Users\mdeed\Documents\GitHub\synth-sim\models\lm393\test\lm393_transient.cir
+Date: Wed Nov 11 10:35:56 2026
+Plotname: Operating Point
+Flags: real
+No. Variables: 18
+No. Points:            1
+Offset:    0.0000000000000000e+00
+Command: Linear Technology Corporation LTspice
+Backannotation: xu1 out1 in1m in1p gnd in2p in2m out2 vcc
+Variables:
+	0	V(inp)	voltage
+	1	V(out)	voltage
+	2	V(outb)	voltage
+	3	V(ref)	voltage
+	4	V(vcc)	voltage
+	5	I(RPU)	device_current
+	6	I(RPUB)	device_current
+	7	I(VCC)	device_current
+	8	I(VIN)	device_current
+	9	I(VREF)	device_current
+	10	Ix(xu1:gnd)	subckt_current
+	11	Ix(xu1:in1m)	subckt_current
+	12	Ix(xu1:in1p)	subckt_current
+	13	Ix(xu1:in2m)	subckt_current
+	14	Ix(xu1:in2p)	subckt_current
+	15	Ix(xu1:out1)	subckt_current
+	16	Ix(xu1:out2)	subckt_current
+	17	Ix(xu1:vcc)	subckt_current
+Values:
+0		2.000000000000000e+00
+	4.854368931798473e-02
+	4.854368931798473e-02
+	2.500000000000000e+00
+	5.000000000000000e+00
+	-9.708737864082383e-04
+	-9.708737864082383e-04
+	-2.741747572816477e-03
+	5.000000000000000e-08
+	5.000000000000000e-08
+	-2.741647572816476e-03
+	-2.500000000000000e-08
+	-2.500000000000000e-08
+	-2.500000000000000e-08
+	-2.500000000000000e-08
+	9.708737864082383e-04
+	9.708737864082383e-04
+	8.000000000000000e-04

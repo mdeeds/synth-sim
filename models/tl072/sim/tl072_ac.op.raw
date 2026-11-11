@@ -1,0 +1,47 @@
+Title: C:\Users\mdeed\Documents\GitHub\synth-sim\models\tl072\test\tl072_ac.cir
+Date: Wed Nov 11 10:35:55 2026
+Plotname: Operating Point
+Flags: real
+No. Variables: 18
+No. Points:            1
+Offset:    0.0000000000000000e+00
+Command: Linear Technology Corporation LTspice
+Backannotation: xu1 out1 in1m in1p vccm in2p in2m out2 vccp
+Variables:
+	0	V(inp)	voltage
+	1	V(out)	voltage
+	2	V(outb)	voltage
+	3	V(vcc)	voltage
+	4	V(vee)	voltage
+	5	I(RIN)	device_current
+	6	I(RLOAD)	device_current
+	7	I(VCC)	device_current
+	8	I(VEE)	device_current
+	9	I(VIN)	device_current
+	10	Ix(xu1:in1m)	subckt_current
+	11	Ix(xu1:in1p)	subckt_current
+	12	Ix(xu1:in2m)	subckt_current
+	13	Ix(xu1:in2p)	subckt_current
+	14	Ix(xu1:out1)	subckt_current
+	15	Ix(xu1:out2)	subckt_current
+	16	Ix(xu1:vccm)	subckt_current
+	17	Ix(xu1:vccp)	subckt_current
+Values:
+0		0.000000000000000e+00
+	2.999984833660599e-03
+	1.350000000000000e+01
+	1.500000000000000e+01
+	-1.500000000000000e+01
+	0.000000000000000e+00
+	2.999984833660599e-07
+	-2.800000000000000e-03
+	2.800000260000000e-03
+	-6.499999999999998e-11
+	6.500299998483366e-11
+	6.499999999999998e-11
+	6.500000000000000e-11
+	6.500000000000000e-11
+	-3.000634863660392e-07
+	0.000000000000000e+00
+	-2.800000260000000e-03
+	2.800000000000000e-03

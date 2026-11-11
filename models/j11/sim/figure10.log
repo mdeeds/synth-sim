@@ -1,0 +1,16 @@
+LTspice 26.0.1 for Windows
+Circuit: C:\Users\mdeed\Documents\GitHub\synth-sim\models\j11\sim\figure10.cir
+Start Time: Wed Nov 11 07:52:33 2026
+Options:TNOM=25 TEMP=25
+solver = Normal
+Maximum thread count: 24
+tnom = 25
+temp = 25
+method = trap
+AsciiRawFile = true
+Total elapsed time: 0.157 seconds.
+
+Files loaded:
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\j11\sim\figure10.cir
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\j11\J111.lib
+

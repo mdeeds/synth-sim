@@ -1,0 +1,11 @@
+* LM393 propagation test; input crosses 2.5 V with 100 mV overdrive.
+.include ..\LM393.lib
+VCC VCC 0 5
+VIN INP 0 PULSE(2 3 2u 10n 10n 2u 4u)
+VREF REF 0 2.5
+RPU OUT VCC 5.1k
+RPUB OUTB VCC 5.1k
+XU1 OUT REF INP 0 INP REF OUTB VCC LM393
+.tran 0 5u 0 2n
+.options TNOM=25 TEMP=25
+.end

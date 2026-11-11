@@ -1,0 +1,16 @@
+LTspice 26.0.1 for Windows
+Circuit: C:\Users\mdeed\Documents\GitHub\synth-sim\models\2164\vca_transfer.cir
+Start Time: Wed Nov 11 11:23:27 2026
+Options:TNOM=25 TEMP=25
+solver = Normal
+Maximum thread count: 24
+tnom = 25
+temp = 25
+method = trap
+AsciiRawFile = true
+Total elapsed time: 0.053 seconds.
+
+Files loaded:
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\2164\vca_transfer.cir
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\2164\SSM2164.lib
+

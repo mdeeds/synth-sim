@@ -1,0 +1,1 @@
+(sym_lib_table (version 7) (lib (name "Oscillator") (type "KiCad") (uri "${KIPRJMOD}/Oscillator.kicad_sym") (options "") (descr "Local symbols for the SSM2164 oscillator")))

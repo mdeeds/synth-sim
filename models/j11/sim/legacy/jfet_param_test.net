@@ -1,0 +1,10 @@
+* JFET Subckt param test
+.subckt J111_TEST D G S PARAMS: VPINCH=-5 BETA_VAL=3m
+J1 D G S NJF_INT
+.model NJF_INT NJF(Vto={VPINCH} Beta={BETA_VAL} Rd=2 Rs=2)
+.ends
+
+X1 d 0 0 J111_TEST PARAMS: VPINCH=-4 BETA_VAL=2m
+Vd d 0 0.1
+.op
+.end

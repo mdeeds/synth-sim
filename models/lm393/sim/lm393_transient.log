@@ -1,0 +1,17 @@
+LTspice 26.0.1 for Windows
+Circuit: C:\Users\mdeed\Documents\GitHub\synth-sim\models\lm393\test\lm393_transient.cir
+Start Time: Wed Nov 11 10:35:56 2026
+Options:TNOM=25 TEMP=25
+solver = Normal
+Maximum thread count: 24
+tnom = 25
+temp = 25
+method = trap
+AsciiRawFile = true
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.150 seconds.
+
+Files loaded:
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\lm393\test\lm393_transient.cir
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\lm393\LM393.lib
+
