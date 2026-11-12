@@ -1,0 +1,20 @@
+LTspice 26.0.1 for Windows
+Circuit: C:\Users\mdeed\Documents\GitHub\synth-sim\circuits\sawtooth\sawtooth.cir
+Start Time: Wed Nov 11 21:56:07 2026
+Options:TNOM=25 TEMP=25 method=gear
+solver = Normal
+Maximum thread count: 24
+tnom = 25
+temp = 25
+method = Gear
+AsciiRawFile = true
+Per .tran options, skipping operating point for transient analysis.
+Total elapsed time: 4.719 seconds.
+
+Files loaded:
+C:\Users\mdeed\Documents\GitHub\synth-sim\circuits\sawtooth\sawtooth.cir
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\2164\SSM2164.lib
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\tl072\TL072.lib
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\lm393\LM393.lib
+C:\Users\mdeed\Documents\GitHub\synth-sim\models\j11\J111.lib
+

@@ -1,0 +1,67 @@
+* SSM2164/TL072 integrator with a J111 capacitor-reset switch.
+* The VCA input current is fixed; the J111 provides the fast flyback.
+.include ..\..\models\2164\SSM2164.lib
+.include ..\..\models\tl072\TL072.lib
+.include ..\..\models\lm393\LM393.lib
+.include ..\..\models\j11\J111.lib
+
+VCC VCC 0 15
+VEE VEE 0 -15
+VCV CV 0 0.774
+VMODE MODE 0 0
+.param MIX=0.5 RPOT=100k
+
+* Constant input voltage/current into SSM2164 channel 1.
+VIN IN 0 1
+RIN IN NDRIVE 30k
+RSHUNT NDRIVE NCOMP 500
+CCOMP NCOMP 0 560p
+VIMON NDRIVE IIN1 0
+
+* Comparator A switches at the negative ramp limit and reset level.
+* Comparator B inverts HYST to drive the J111 gate switch.
+RPU1 HYST VCC 10k
+RPU2 RESET VCC 10k
+RTH VEE VTH 1Meg
+RREF VTH 0 100k
+RFB VTH RESET 1Meg
+* LM393 pin order: OUT1, IN1-, IN1+, VEE, IN2+, IN2-, OUT2, VCC.
+XU3 HYST VTH CAP VEE 0 HYST RESET VCC LM393
+
+* Unused SSM2164 channels are held at their inactive DC conditions.
+VVC2 VC2 0 0
+VIIN2 IIN2 0 0
+VVC3 VC3 0 0
+VIIN3 IIN3 0 0
+VVC4 VC4 0 0
+VIIN4 IIN4 0 0
+VIOUT2 IOUT2 0 0
+VIOUT3 IOUT3 0 0
+VIOUT4 IOUT4 0 0
+VOMON IOUT1 SUM 0
+* SSM2164 pin order: MODE, IIN1, VC1, IOUT1, IOUT2, VC2, IIN2, GND,
+* VEE, IIN3, VC3, IOUT3, IOUT4, VC4, IIN4, VCC.
+XU1 MODE IIN1 CV IOUT1 IOUT2 VC2 IIN2 0 VEE IIN3 VC3 IOUT3 IOUT4 VC4 IIN4 VCC SSM2164
+
+CFB CAP SUM 560p IC=0
+* Scale the comparator square wave into the TL072 input common-mode range.
+RSQ1 RESET SQDIV 20k
+RSQ2 SQDIV 0 10k
+* RV1 crossfades CAP (MIX=0) to the scaled comparator square (MIX=1).
+RPOT1 CAP MIXW {max(1,RPOT*MIX)}
+RPOT2 MIXW SQDIV {max(1,RPOT*(1-MIX))}
+* TL072 channel 2 is a unity-gain buffer for the high-impedance pot wiper.
+XU2 CAP SUM 0 VEE MIXW MIXOUT MIXOUT VCC TL072
+
+* The depletion JFET is pinched off at -15 V gate bias. RESET rises during
+* flyback and forward-biases its gate near 0 V.
+RGATE RESET GATE 100k
+RRESET CAP DRESET 220
+VQMON DRESET QDRAIN 0
+* J111 pin order: Drain, Gate, Source.
+XQ1 QDRAIN GATE SUM J111
+
+.save V(CAP) V(SUM) V(IN) V(CV) V(HYST) V(RESET) V(VTH) V(GATE) V(DRESET) V(SQDIV) V(MIXW) V(MIXOUT) V(IOUT1) I(VIMON) I(VOMON) I(VQMON)
+.tran 0 10m 0 50n uic
+.options TNOM=25 TEMP=25 method=gear
+.end
