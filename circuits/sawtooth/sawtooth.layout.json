@@ -1,0 +1,156 @@
+{
+  "version": 2,
+  "components": {
+    "XU3": {
+      "column": 38,
+      "row": 2,
+      "bank": "ic",
+      "flipped": false,
+      "vertical": false
+    },
+    "XU1": {
+      "column": 6,
+      "row": 2,
+      "bank": "ic",
+      "flipped": false,
+      "vertical": false
+    },
+    "XU2": {
+      "column": 23,
+      "row": 2,
+      "bank": "ic",
+      "flipped": false,
+      "vertical": false
+    },
+    "VCV": {
+      "column": 8,
+      "row": 0,
+      "bank": "top",
+      "flipped": true,
+      "vertical": true
+    },
+    "VIN": {
+      "column": 0,
+      "row": 3,
+      "bank": "top",
+      "flipped": false,
+      "vertical": true
+    },
+    "RIN": {
+      "column": 2,
+      "row": 4,
+      "bank": "top",
+      "flipped": false,
+      "vertical": false
+    },
+    "RSHUNT": {
+      "column": 3,
+      "row": 2,
+      "bank": "top",
+      "flipped": false,
+      "vertical": false
+    },
+    "CCOMP": {
+      "column": 5,
+      "row": 1,
+      "bank": "top",
+      "flipped": true,
+      "vertical": true
+    },
+    "RPU1": {
+      "column": 38,
+      "row": 0,
+      "bank": "top",
+      "flipped": true,
+      "vertical": true
+    },
+    "RPU2": {
+      "column": 28,
+      "row": 1,
+      "bank": "top",
+      "flipped": true,
+      "vertical": true
+    },
+    "RTH": {
+      "column": 43,
+      "row": 1,
+      "bank": "bottom",
+      "flipped": true,
+      "vertical": true
+    },
+    "RREF": {
+      "column": 42,
+      "row": 1,
+      "bank": "bottom",
+      "flipped": false,
+      "vertical": true
+    },
+    "RFB": {
+      "column": 45,
+      "row": 1,
+      "bank": "bottom",
+      "flipped": false,
+      "vertical": false
+    },
+    "CFB": {
+      "column": 21,
+      "row": 0,
+      "bank": "top",
+      "flipped": false,
+      "vertical": false
+    },
+    "RSQ1": {
+      "column": 37,
+      "row": 3,
+      "bank": "bottom",
+      "flipped": true,
+      "vertical": false
+    },
+    "RSQ2": {
+      "column": 35,
+      "row": 2,
+      "bank": "bottom",
+      "flipped": true,
+      "vertical": true
+    },
+    "RPOT1": {
+      "column": 29,
+      "row": 1,
+      "bank": "bottom",
+      "flipped": false,
+      "vertical": false
+    },
+    "RPOT2": {
+      "column": 33,
+      "row": 2,
+      "bank": "bottom",
+      "flipped": false,
+      "vertical": false
+    },
+    "RGATE": {
+      "column": 17,
+      "row": 3,
+      "bank": "top",
+      "flipped": true,
+      "vertical": false
+    },
+    "RRESET": {
+      "column": 18,
+      "row": 1,
+      "bank": "top",
+      "flipped": true,
+      "vertical": false
+    },
+    "XQ1": {
+      "column": 15,
+      "row": 0,
+      "bank": "top",
+      "flipped": true,
+      "vertical": false
+    }
+  },
+  "bridges": {
+    "vth": 43,
+    "reset": 47
+  }
+}

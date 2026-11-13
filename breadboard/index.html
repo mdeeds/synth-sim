@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPICE Breadboard Layout</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <header class="toolbar">
+    <div>
+      <h1>SPICE Breadboard</h1>
+      <p id="circuit-name">Loading circuit…</p>
+    </div>
+    <div class="toolbar-actions">
+      <span id="mode-status" role="status" aria-live="polite">Breadboard mode (W)</span>
+      <span id="save-status" role="status">Loading layout…</span>
+      <button id="save-button" type="button" disabled>Save layout</button>
+    </div>
+  </header>
+  <main>
+    <div id="notice" class="notice" role="status" hidden></div>
+    <div class="board-scroll">
+      <svg id="board" viewBox="0 0 1900 960" aria-label="Interactive breadboard layout"></svg>
+    </div>
+    <p class="help">Press W to toggle breadboard and ratsnest modes, and P to toggle black-and-white print mode. Click to select; Shift-click to add or remove components. Use the arrow keys to move selected parts one grid unit (ICs move left/right only). Press X to flip a selected horizontal non-IC part, or R to toggle vertical orientation for two-pin parts connected to one rail. Save writes a layout file beside the circuit.</p>
+    <section class="legend" aria-label="Breadboard guide">
+      <span><i class="rail-vcc"></i> VCC</span>
+      <span><i class="rail-ground"></i> GND</span>
+      <span><i class="rail-vee"></i> VEE</span>
+      <span><i class="wire-sample"></i> automatic node wire</span>
+      <span><i class="bridge-sample"></i> top-to-bottom bridge</span>
+    </section>
+  </main>
+</body>
+</html>

@@ -8,7 +8,6 @@
 VCC VCC 0 15
 VEE VEE 0 -15
 VCV CV 0 0.774
-VMODE MODE 0 0
 .param MIX=0.5 RPOT=100k
 
 * Constant input voltage/current into SSM2164 channel 1.
@@ -28,20 +27,11 @@ RFB VTH RESET 1Meg
 * LM393 pin order: OUT1, IN1-, IN1+, VEE, IN2+, IN2-, OUT2, VCC.
 XU3 HYST VTH CAP VEE 0 HYST RESET VCC LM393
 
-* Unused SSM2164 channels are held at their inactive DC conditions.
-VVC2 VC2 0 0
-VIIN2 IIN2 0 0
-VVC3 VC3 0 0
-VIIN3 IIN3 0 0
-VVC4 VC4 0 0
-VIIN4 IIN4 0 0
-VIOUT2 IOUT2 0 0
-VIOUT3 IOUT3 0 0
-VIOUT4 IOUT4 0 0
+* Unused SSM2164 channels are grounded directly at the package pins.
 VOMON IOUT1 SUM 0
 * SSM2164 pin order: MODE, IIN1, VC1, IOUT1, IOUT2, VC2, IIN2, GND,
 * VEE, IIN3, VC3, IOUT3, IOUT4, VC4, IIN4, VCC.
-XU1 MODE IIN1 CV IOUT1 IOUT2 VC2 IIN2 0 VEE IIN3 VC3 IOUT3 IOUT4 VC4 IIN4 VCC SSM2164
+XU1 0 IIN1 CV IOUT1 0 0 0 0 VEE 0 0 0 0 0 0 VCC SSM2164
 
 CFB CAP SUM 560p IC=0
 * Scale the comparator square wave into the TL072 input common-mode range.
